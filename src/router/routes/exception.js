@@ -23,13 +23,13 @@ export default {
         title: '403',
       },
     },
-      {
-        path: '500',
-        component: () => import('@/pages/exception/500/index.vue'),
-        meta: {
-            auth: true,
-            title: '500',
-        }
-      }
+    {
+      path: '500',
+      component: () => import('@/pages/exception/500/index.vue'),
+      meta: {
+        auth: true,
+        title: '500',
+      },
+    },
   ],
 }
