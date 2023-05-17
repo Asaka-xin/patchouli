@@ -11,7 +11,7 @@ export default {
       path: 'user',
       component: () => import('@/pages/user/index.vue'),
       meta: {
-        auth: true,
+        authenticated: true,
         title: '用户管理',
       },
     },
@@ -19,7 +19,7 @@ export default {
       path: 'role',
       component: () => import('@/pages/role/index.vue'),
       meta: {
-        auth: true,
+        authenticated: true,
         title: '角色管理',
       },
     },

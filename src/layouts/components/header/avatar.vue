@@ -2,11 +2,17 @@
 import { Logout, UserAvatar } from '@vicons/carbon'
 import { useRouter } from 'vue-router'
 import { renderIcon } from '@/utils'
-import { useUserStore } from '@/stores'
+import { useAuthStore } from '@/stores'
 
+const auth = useAuthStore()
 const router = useRouter()
-const userStore = useUserStore()
-userStore.fetchUser()
+function logout() {
+  useAuthStore().resetAuth()
+  const { authenticated } = router.currentRoute.value.meta
+  if (authenticated)
+    router.push('/login')
+}
+
 const options = [
   {
     label: '用户资料',
@@ -21,7 +27,7 @@ const options = [
     key: 'logout',
     icon: renderIcon(Logout),
     props: {
-      onClick: () => userStore.logout().then(() => router.push('/login')),
+      onClick: () => logout(),
     },
   },
 ]
@@ -31,10 +37,10 @@ const options = [
   <n-dropdown :options="options">
     <n-space>
       <n-button text class="h-8">
-        {{ userStore.user.username }}
+        {{ auth.user.username }}
       </n-button>
       <n-button text class="h-8">
-        <n-avatar round :size="40" :src="userStore.user.avatar" />
+        <n-avatar round :size="40" :src="auth.user.avatar" />
       </n-button>
     </n-space>
   </n-dropdown>

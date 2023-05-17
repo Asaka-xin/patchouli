@@ -9,7 +9,7 @@ export default {
       component: () => import('@/pages/dashboard/index.vue'),
       meta: {
         title: '首页',
-        auth: true,
+        authenticated: true,
       },
     }],
 }

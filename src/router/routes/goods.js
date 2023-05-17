@@ -9,7 +9,7 @@ export default {
       component: () => import('@/pages/goods/index.vue'),
       meta: {
         title: '商品',
-        auth: false,
+        authenticated: false,
       },
     }],
 }

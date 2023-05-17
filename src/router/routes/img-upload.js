@@ -9,7 +9,7 @@ export default {
       component: () => import('@/pages/img-upload/index.vue'),
       meta: {
         title: '图片',
-        auth: false,
+        authenticated: false,
       },
     }],
 }

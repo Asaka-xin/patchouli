@@ -9,7 +9,7 @@ export default {
       component: () => import('@/pages/profile/index.vue'),
       meta: {
         title: '个人',
-        auth: false,
+        authenticated: false,
       },
     }],
 }
